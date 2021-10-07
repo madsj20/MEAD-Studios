@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Mads' Scene.unity
+=======
+- path: Assets/Scenes/Daniels andet bud.unity
+>>>>>>> main
   isLoaded: 1
   isActive: 1
   isSubScene: 0
