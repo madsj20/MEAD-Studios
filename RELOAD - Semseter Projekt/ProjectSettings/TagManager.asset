@@ -6,6 +6,10 @@ TagManager:
   tags:
   - payer1Side
   - player2Side
+  - player1
+  - player2
+  - barrier
+  - powerup
   layers:
   - Default
   - TransparentFX
