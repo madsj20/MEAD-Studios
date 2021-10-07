@@ -1,4 +1,5 @@
 sceneSetups:
+- path: Assets/Scenes/copies/Mads' Scene med coilders.unity
 - path: Assets/Scenes/Mads' Scene.unity
   isLoaded: 1
   isActive: 1
