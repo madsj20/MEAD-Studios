@@ -10,6 +10,7 @@ TagManager:
   - player2
   - barrier
   - powerup
+  - bullet
   layers:
   - Default
   - TransparentFX

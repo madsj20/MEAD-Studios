@@ -27,19 +27,21 @@ public class P2 : MonoBehaviour
         transform.Translate(movementDirection * speed * inputMagnitude * Time.deltaTime, Space.World);
         RotatePlayer();
 
-
     }
     private void FixedUpdate()
     {
-        
+
     }
 
     private void RotatePlayer()
     {
-        //rotatePlayer = Input.GetAxis("Rotate" + playerNumber);
+        rotatePlayer = Input.GetAxis("Rotate" + playerNumber);
         float rotation = -rotatePlayer * rotationSpeed;
         transform.Rotate(Vector3.forward * rotation * Time.deltaTime);
         
     }
-
+ 
 }
+
+
+

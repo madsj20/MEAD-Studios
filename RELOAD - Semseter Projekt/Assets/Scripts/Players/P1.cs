@@ -2,49 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class P1 : MonoBehaviour
 {
-    private float _horizontalInput = 0;
-    private float _verticalInput = 0;
-    public int movementSpeed = 0;
-    public int rotationSpeed = 0;
+    [SerializeField]
+    private float speed;
 
-    Rigidbody2D rb2d;
-    void Start()
-    {
-        rb2d = GetComponent<Rigidbody2D>();
-    }
+    [SerializeField]
+    private float rotationSpeed;
 
     void Update()
     {
-        GetPlayerInput();
+        float horizontalInput = Input.GetAxis("Horizontal1");
+        float verticalInput = Input.GetAxis("Vertical1");
 
-    }
+        Vector2 movementDirection = new Vector2(horizontalInput, verticalInput);
+        float inputMagnitude = Mathf.Clamp01(movementDirection.magnitude);
+        movementDirection.Normalize();
 
-    private void FixedUpdate()
-    {
+        transform.Translate(movementDirection * speed * inputMagnitude * Time.deltaTime, Space.World);
 
-        RotatePlayer();
-        MovePlayer();
-    }
-
-
-    private void GetPlayerInput()
-    {
-        _horizontalInput = Input.GetAxisRaw("Horizontal1");
-        _verticalInput = Input.GetAxisRaw("Vertical1");
-    }
-
-    private void RotatePlayer()
-    {
-        float rotation = -_horizontalInput * rotationSpeed;
-        transform.Rotate(Vector3.forward * rotation);
-    }
-
-    private void MovePlayer()
-    {
-        rb2d.velocity = transform.up * Mathf.Clamp01(_verticalInput) * movementSpeed;
-        
+        if (movementDirection != Vector2.zero)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, movementDirection);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+        }
     }
 }
