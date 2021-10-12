@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     public GameObject heart1;
     public GameObject heart2;
     public GameObject heart3;
+    public GameObject bullet;
 
 
     void Start()
@@ -67,5 +68,10 @@ public class Health : MonoBehaviour
         {
             heart3.SetActive(false);
         }
+    }
+    private void OnTriggerEnter2D(Collider2D bullet)
+    {
+        Debug.Log("Player " + gameObject.GetComponent<Movement>().playerNumber + " lost health");
+        currentHealth -= 1;
     }
 }

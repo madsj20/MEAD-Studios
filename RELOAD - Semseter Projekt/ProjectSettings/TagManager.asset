@@ -11,6 +11,7 @@ TagManager:
   - barrier
   - powerup
   - bullet
+  - divider
   layers:
   - Default
   - TransparentFX

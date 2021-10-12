@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     public float playerNumber = 1;
-    public Rigidbody bullet;
+    public Rigidbody2D bullet;
     public Transform FireTransform;
     public float launchForce = 20;
 
@@ -32,7 +32,7 @@ public class Shooting : MonoBehaviour
     private void Fire()
     {
         fired = true;
-        Rigidbody bulletInstance = Instantiate(bullet, FireTransform.position, FireTransform.rotation) as Rigidbody;
+        Rigidbody2D bulletInstance = Instantiate(bullet, FireTransform.position, FireTransform.rotation) as Rigidbody2D;
         bulletInstance.velocity = launchForce * FireTransform.up;
     }
 

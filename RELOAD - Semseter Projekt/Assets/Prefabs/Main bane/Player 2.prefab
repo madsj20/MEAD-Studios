@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 428539187}
   - component: {fileID: 5594308883289577406}
   - component: {fileID: -1149555032052154612}
+  - component: {fileID: 9007701709087221193}
   m_Layer: 3
   m_Name: Player 2
   m_TagString: Untagged
@@ -133,6 +134,8 @@ MonoBehaviour:
   speed: 20
   rotationSpeed: 300
   playerNumber: 2
+  health: 3
+  bullet: {fileID: 0}
 --- !u!114 &4281183086024180097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 2
-  bullet: {fileID: -3269986980896020703, guid: c3f2450d49ff4cf4595dbb99b7f111aa, type: 3}
+  bullet: {fileID: 6215196069882358666, guid: c3f2450d49ff4cf4595dbb99b7f111aa, type: 3}
   FireTransform: {fileID: 637119142}
   launchForce: 50
 --- !u!58 &5594308883289577406
@@ -203,3 +206,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &9007701709087221193
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005510037222849687}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.22125524, y: 7.11435}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.50841725, y: 0.34981367}
+    oldSize: {x: 10.09, y: 14.39}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2742615, y: 4.301894}
+  m_EdgeRadius: 0
